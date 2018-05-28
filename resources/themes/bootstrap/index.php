@@ -28,63 +28,63 @@
 
         <!-- Modal -->
         <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
-                aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <button type="button" class="close" 
-                            data-dismiss="modal">
-                                <span aria-hidden="true">&times;</span>
-                                <span class="sr-only">Close</span>
-                            </button>
-                            <h4 class="modal-title" id="myModalLabel">
-                                Please Enter Direcory name
-                            </h4>
-                        </div>
-                        
-                        <!-- Modal Body -->
-                        <div class="modal-body">
-                            <form class="form-horizontal" role="form">
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" 
+                                data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            Please Enter Direcory name
+                        </h4>
+                    </div>
+
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
                             <div class="form-group">
                                 <label  class="col-sm-2 control-label"
                                         for="inputEmail3">Directory Name</label>
 
                                 <div class="col-sm-10">
-                                <br>
+                                    <br>
                                     <input type="text" class="form-control" 
-                                    id="directory" placeholder="direcory name" required/>
+                                           id="directory" placeholder="direcory name" required/>
                                 </div>
                             </div>
-                            </form>
-                        </div>
-                        
-                        <!-- Modal Footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default"
-                                    data-dismiss="modal">
-                                        Close
-                            </button>
-                            <button onclick="getDirName()" type="button" class="btn btn-primary" data-dismiss="modal">
-                                Create
-                            </button>
-                        </div>
+                        </form>
+                    </div>
+
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                            Close
+                        </button>
+                        <button onclick="getDirName()" type="button" class="btn btn-primary" data-dismiss="modal">
+                            Create
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
 
         <div id="page-navbar" class="navbar navbar-default navbar-fixed-top">
             <div class="container">
-                
-                
+
+
 
                 <?php $breadcrumbs = $lister->listBreadcrumbs(); ?>
 
                 <p class="navbar-text">
-                    <?php foreach($breadcrumbs as $breadcrumb): ?>
+                    <?php foreach ($breadcrumbs as $breadcrumb): ?>
                         <?php if ($breadcrumb != end($breadcrumbs)): ?>
-                                <a href="<?php echo $breadcrumb['link']; ?>"><?php echo $breadcrumb['text']; ?></a>
-                                <span class="divider">/</span>
+                            <a href="<?php echo $breadcrumb['link']; ?>"><?php echo $breadcrumb['text']; ?></a>
+                            <span class="divider">/</span>
                         <?php else: ?>
                             <?php echo $breadcrumb['text']; ?>
                         <?php endif; ?>
@@ -100,7 +100,7 @@
                         </li>
                     </ul>
 
-                    <?php  if ($lister->isZipEnabled()): ?>
+                    <?php if ($lister->isZipEnabled()): ?>
                         <ul id="page-top-download-all" class="nav navbar-nav">
                             <li>
                                 <a href="?zip=<?php echo $lister->getDirectoryPath(); ?>" id="download-all-link">
@@ -109,27 +109,27 @@
                             </li>
                         </ul>
                     <?php endif; ?>
-                    
+
                 </div>
-                
+
             </div>
         </div>
 
         <div id="page-content" class="container">
 
             <?php file_exists('header.php') ? include('header.php') : include($lister->getThemePath(true) . "/default_header.php"); ?>
-                    <div>
-                        <button class="btn btn-primary btn-lg " data-toggle="modal" data-target="#myModalHorizontal">
-                            Create Direcory
-                        </button>
-                        <form action="./resources/themes/bootstrap/upload_file.php" method="post" enctype="multipart/form-data">
-                            Select image to upload:
-                                <input type="text" name="dir" id="dir" value="/<?php echo $lister->getDirectoryPath(); ?>" style="visibility:hidden"/>
-                                <input type="file" name="file" id="file" accept="application/pdf">
-                            <input type="submit" value="Upload" name="submit">
-                        </form>               
-                    </div>
-            <?php if($lister->getSystemMessages()): ?>
+            <div>
+                <button class="btn btn-primary btn-lg " data-toggle="modal" data-target="#myModalHorizontal">
+                    Create Direcory
+                </button>
+                <form action="./resources/themes/bootstrap/upload_file.php" method="post" enctype="multipart/form-data">
+                    Select image to upload:
+                    <input type="text" name="dir" id="dir" value="/<?php echo $lister->getDirectoryPath(); ?>" style="visibility:hidden"/>
+                    <input type="file" name="file" id="file" accept="application/pdf">
+                    <input type="submit" value="Upload" name="submit">
+                </form>               
+            </div>
+            <?php if ($lister->getSystemMessages()): ?>
                 <?php foreach ($lister->getSystemMessages() as $message): ?>
                     <div class="alert alert-<?php echo $message['type']; ?>">
                         <?php echo $message['text']; ?>
@@ -148,9 +148,9 @@
 
             <ul id="directory-listing" class="nav nav-pills nav-stacked">
 
-                <?php foreach($dirArray as $name => $fileInfo): ?>
+                <?php foreach ($dirArray as $name => $fileInfo): ?>
                     <li data-name="<?php echo $name; ?>" data-href="<?php echo $fileInfo['url_path']; ?>">
-                        <a href="<?php echo $fileInfo['url_path']; ?>" class="clearfix" data-name="<?php echo $name; ?>">
+                        <a href="<?php echo $fileInfo['url_path']; ?>" class="clearfix" data-name="<?php echo $name; ?>" target="<?php if (is_file($fileInfo['file_path'])) echo "_blank"; else echo "_self"?>">
 
                             <div class="row">
                                 <span class="file-name col-md-7 col-sm-6 col-xs-9">
@@ -219,25 +219,26 @@
         </div>
 
         <script>
-            function createDir(dirName){
+            function createDir(dirName) {
                 var ajaxurl = './resources/themes/bootstrap/createDir.php';
                 var dir1 = "/<?php echo $lister->getDirectoryPath(); ?>";
-                data =  {'dir': dir1, 'name': dirName};
-                $.post(ajaxurl, data,function(data, status){
+                data = {'dir': dir1, 'name': dirName};
+                $.post(ajaxurl, data, function (data, status) {
                     //alert("Data: " + data + "\nStatus: " + status);
                     window.location.reload(true);
                 });
-            };
+            }
+            ;
 
-            function getDirName(){
+            function getDirName() {
                 var dirName = $('#directory').val();
-                if(dirName === ''){
+                if (dirName === '') {
                     alert("please enter direcory name");
                 } else {
                     createDir(dirName);
                 }
             }
-            function uploadFile() {                
+            function uploadFile() {
                 window.location.assign("./resources/themes/bootstrap/upload_file.php");
             }
 
