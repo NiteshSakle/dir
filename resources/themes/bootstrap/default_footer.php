@@ -1,5 +1,5 @@
 
 
 <div class="footer">
-    Powered by
+    Developed & Maintained By MIS Section.!
 </div>

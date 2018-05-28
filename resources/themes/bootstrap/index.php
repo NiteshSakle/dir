@@ -4,16 +4,16 @@
         <title>Directory listing of <?php echo $lister->getListedPath(); ?></title>
         <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/img/folder.png">
 
-        <!-- STYLES -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/style1.css">
 
         <!-- SCRIPTS -->
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo THEMEPATH; ?>/js/ajax_googleapi.js"></script>     
         <script type="text/javascript" src="<?php echo THEMEPATH; ?>/js/directorylister.js"></script>
+        <script type="text/javascript" src="<?php echo THEMEPATH; ?>/js/js_elibrary.js"></script>
 
+        <!-- STYLES -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <!-- FONTS -->
         <link rel="stylesheet" type="text/css"  href="//fonts.googleapis.com/css?family=Cutive+Mono">
 
