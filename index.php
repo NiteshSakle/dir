@@ -1,5 +1,11 @@
 <?php
+include("connect.php");
 
+if (!isset($_SESSION['sapid'])) {
+    header("location:login.php");
+    exit();
+}
+    
     // Include the DirectoryLister class
     require_once('resources/DirectoryLister.php');
 

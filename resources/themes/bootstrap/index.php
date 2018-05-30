@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Directory listing of <?php echo $lister->getListedPath(); ?></title>
+        <title>KHTPS-ELIBRARY</title>
         <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/img/folder.png">
 
         <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/style.css">
@@ -39,7 +39,7 @@
                             <span class="sr-only">Close</span>
                         </button>
                         <h4 class="modal-title" id="myModalLabel">
-                            Please Enter Direcory name
+                            Folder Details
                         </h4>
                     </div>
 
@@ -47,13 +47,13 @@
                     <div class="modal-body">
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label  class="col-sm-2 control-label"
-                                        for="inputEmail3">Directory Name</label>
+                                <label  class="col-sm-3 control-label"
+                                        for="inputEmail3">Folder Name</label>
 
-                                <div class="col-sm-10">
+                                <div class="col-sm-9">
                                     <br>
                                     <input type="text" class="form-control" 
-                                           id="directory" placeholder="direcory name" required/>
+                                           id="directory" placeholder="Folder Name" required/>
                                 </div>
                             </div>
                         </form>
@@ -74,16 +74,16 @@
         </div>
 
         <div id="page-navbar" class="navbar navbar-default navbar-fixed-top">
+            <span style="text-align: center;">
+                <h2 style="background-color: #337ab7;margin-top: 0px;padding: 15px;color: white;font-family: cursive">Khaperkheda Thermal Power Station: E-library</h2>
+            </span>
             <div class="container">
-
-
-
                 <?php $breadcrumbs = $lister->listBreadcrumbs(); ?>
 
                 <p class="navbar-text">
                     <?php foreach ($breadcrumbs as $breadcrumb): ?>
                         <?php if ($breadcrumb != end($breadcrumbs)): ?>
-                            <a href="<?php echo $breadcrumb['link']; ?>"><?php echo $breadcrumb['text']; ?></a>
+                    <a href="<?php echo $breadcrumb['link']; ?>"><?php echo $breadcrumb['text']; ?></a>
                             <span class="divider">/</span>
                         <?php else: ?>
                             <?php echo $breadcrumb['text']; ?>
@@ -92,43 +92,28 @@
                 </p>
 
                 <div class="navbar-right">
-                    <ul id="page-top-nav" class="nav navbar-nav">
-                        <li>
-                            <a href="javascript:void(0)" id="page-top-link">
-                                <i class="fa fa-arrow-circle-up fa-lg"></i>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <?php if ($lister->isZipEnabled()): ?>
-                        <ul id="page-top-download-all" class="nav navbar-nav">
-                            <li>
-                                <a href="?zip=<?php echo $lister->getDirectoryPath(); ?>" id="download-all-link">
-                                    <i class="fa fa-download fa-lg"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    <?php endif; ?>
-
+                    <a href="logout.php" class="btn btn-info btn-lg">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
                 </div>
-
             </div>
         </div>
 
+        <div>
+            <form action="./resources/themes/bootstrap/upload_file.php" method="post" enctype="multipart/form-data" style="float: right">               
+                Select file to upload:
+                <input type="file" name="file" id="file" accept="application/pdf">
+                <input type="submit" value="Upload" name="submit">
+                <input type="text" name="dir" id="dir" value="/<?php echo $lister->getDirectoryPath(); ?>" style="visibility:hidden"/>                             
+            </form> 
+            <button class="btn btn-primary btn-lg " data-toggle="modal" data-target="#myModalHorizontal" style="float: left">
+                Create A Folder Here
+            </button>  
+        </div>        
+        
         <div id="page-content" class="container">
 
             <?php file_exists('header.php') ? include('header.php') : include($lister->getThemePath(true) . "/default_header.php"); ?>
-            <div>
-                <button class="btn btn-primary btn-lg " data-toggle="modal" data-target="#myModalHorizontal">
-                    Create Direcory
-                </button>
-                <form action="./resources/themes/bootstrap/upload_file.php" method="post" enctype="multipart/form-data">
-                    Select image to upload:
-                    <input type="text" name="dir" id="dir" value="/<?php echo $lister->getDirectoryPath(); ?>" style="visibility:hidden"/>
-                    <input type="file" name="file" id="file" accept="application/pdf">
-                    <input type="submit" value="Upload" name="submit">
-                </form>               
-            </div>
             <?php if ($lister->getSystemMessages()): ?>
                 <?php foreach ($lister->getSystemMessages() as $message): ?>
                     <div class="alert alert-<?php echo $message['type']; ?>">
@@ -144,6 +129,7 @@
                     <div class="col-md-2 col-sm-2 col-xs-2 text-right">Size</div>
                     <div class="col-md-3 col-sm-4 hidden-xs text-right">Last Modified</div>
                 </div>
+                    <hr style="border: 0;background-color: black;height:1px;">                
             </div>
 
             <ul id="directory-listing" class="nav nav-pills nav-stacked">
@@ -154,69 +140,29 @@
 
                             <div class="row">
                                 <span class="file-name col-md-7 col-sm-6 col-xs-9">
-                                    <i class="fa <?php echo $fileInfo['icon_class']; ?> fa-fw"></i>
-                                    <?php echo $name; ?>
+                                        <i class="fa <?php echo $fileInfo['icon_class']; ?> fa-fw"></i>                                 
+                                    <b> <span style="color: #D94E51;font-size: 18px"><?php echo $name; ?> </span></b>
                                 </span>
 
                                 <span class="file-size col-md-2 col-sm-2 col-xs-3 text-right">
-                                    <?php echo $fileInfo['file_size']; ?>
+                                    <b><span style="color: #D94E51;font-size: 18px"><?php echo $fileInfo['file_size']; ?></span></b>
                                 </span>
 
                                 <span class="file-modified col-md-3 col-sm-4 hidden-xs text-right">
-                                    <?php echo $fileInfo['mod_time']; ?>
+                                    <b><span style="color: #D94E51;font-size: 15px"><?php echo $fileInfo['mod_time']; ?> </span></b>
                                 </span>
                             </div>
 
                         </a>
-
-                        <?php if (is_file($fileInfo['file_path'])): ?>
-
-                            <a href="javascript:void(0)" class="file-info-button">
-                                <i class="fa fa-info-circle"></i>
-                            </a>
-
-                        <?php endif; ?>
-
+ 
                     </li>
+                    <hr style="border: 0;background-color: black;height:1px; ">
                 <?php endforeach; ?>
 
             </ul>
         </div>
-
-        <?php file_exists('footer.php') ? include('footer.php') : include($lister->getThemePath(true) . "/default_footer.php"); ?>
-
-        <div id="file-info-modal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">{{modal_header}}</h4>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <table id="file-info" class="table table-bordered">
-                            <tbody>
-
-                                <tr>
-                                    <td class="table-title">MD5</td>
-                                    <td class="md5-hash">{{md5_sum}}</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="table-title">SHA1</td>
-                                    <td class="sha1-hash">{{sha1_sum}}</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        
+        <?php  file_exists('footer.php') ? include('footer.php') : include($lister->getThemePath(true) . "/default_footer.php"); ?>
 
         <script>
             function createDir(dirName) {
