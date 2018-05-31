@@ -26,7 +26,7 @@ if ($_POST) {
     if ($sapid !== '' and $dob !== '' ) {
 
         if ($checkusr_res != true) {
-            $qry1 = "insert into user ( `sapid`, `dob`,`name`,`password`) values($sapid,$dob,'$name','$password')";
+            $qry1 = "insert into user ( `sapid`, `dob`,`name`,`password`) values($sapid,'$dob','$name','$password')";
             mysql_query($qry1);
             echo "<script>
                     alert('Information saved successfully..!!');

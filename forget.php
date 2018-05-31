@@ -3,21 +3,21 @@ include("connect.php");
 
 if ($_POST) {
     $sapid = $_POST['sapid'];
-    $cpfno = $_POST['cpfno'];
+    $dob = $_POST['dob'];
     $password = $_POST['password'];
 
-    $qry2 = "SELECT * FROM user WHERE sapid='$sapid' and cpfno='$cpfno'";
+    $qry2 = "SELECT * FROM user WHERE sapid='$sapid' and dob='$dob'";
     $result2 = mysql_query($qry2);
     $num_rows = mysql_num_rows($result2);
-    if ($sapid !== '' and $cpfno !== '' and $password !== '') {
+    if ($sapid !== '' and $dob !== '' and $password !== '') {
         if ($num_rows > 0) {
-            $qry1 = "UPDATE user SET password = '$password' WHERE sapid='$sapid' and cpfno='$cpfno'";
+            $qry1 = "UPDATE user SET password = '$password' WHERE sapid='$sapid' and dob='$dob'";
             mysql_query($qry1);
             
             header("location: login.php?id=6");
         } else {
             
-            $message = "Invalid SAP id or CPF no.!!";
+            $message = "Invalid SAP id or DOB.!!";
             echo "<script type='text/javascript'>alert('$message');</script>";
             //echo "quarter problem.";
         }
@@ -66,9 +66,9 @@ if ($_POST) {
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-18" data-validate = "CPF No is required">
-						<span class="label-input100">CPF NO</span>
-						<input class="input100" type="text" name="cpfno" placeholder="Enter cpfno">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="DOB is required">
+						<span class="label-input100">Date Of Birth</span>
+                                                <input class="input100" type="date" name="dob" placeholder="Enter date of birth"  value="<?php if (isset($_POST['dob'])) echo $_POST['dob']; ?>">
 						<span class="focus-input100"></span>
 					</div>
 
