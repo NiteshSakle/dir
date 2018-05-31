@@ -100,18 +100,17 @@
         </div>
 
         <div>
-            <form action="./resources/themes/bootstrap/upload_file.php" method="post" enctype="multipart/form-data" style="float: right">               
-                Select file to upload:
-                <input type="file" name="file" id="file" accept="application/pdf">
-                <input type="submit" value="Upload" name="submit">
-                <input type="text" name="dir" id="dir" value="/<?php echo $lister->getDirectoryPath(); ?>" style="visibility:hidden"/>                             
-            </form> 
             <button class="btn btn-primary btn-lg " data-toggle="modal" data-target="#myModalHorizontal" style="float: left">
                 Create A Folder Here
-            </button>  
+            </button>
+            <form action="./resources/themes/bootstrap/upload_file.php" method="post" enctype="multipart/form-data" style="float: right;width: 38%">               
+                Select file to upload:
+                <input type="file" name="file" id="file" accept="application/pdf">
+                <input type="submit" value="Upload" name="submit" class="btn btn-default">
+                <input type="text" name="dir" id="dir" value="/<?php echo $lister->getDirectoryPath(); ?>" style="visibility:hidden"/>                             
+            </form>             
         </div>        
         
-        <div id="page-content" class="container">
 
             <?php file_exists('header.php') ? include('header.php') : include($lister->getThemePath(true) . "/default_header.php"); ?>
             <?php if ($lister->getSystemMessages()): ?>
@@ -122,6 +121,7 @@
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
+        <div id="page-content" class="container">
 
             <div id="directory-list-header">
                 <div class="row">

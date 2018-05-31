@@ -37,6 +37,7 @@ body.breadcrumb-fixed {
     font-family: 'Cutive Mono', monospace, serif;
     font-weight: bold;
     padding: 10px 15px;
+    margin-top: 4%;
 }
 
 #directory-listing {
