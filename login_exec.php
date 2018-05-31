@@ -28,10 +28,8 @@ if ($result) {
 
         $_SESSION['emp_id'] = $member['emp_id'];
         $_SESSION['sapid'] = $member['sapid'];
-        $_SESSION['cpfno'] = $member['cpfno'];
         $_SESSION['name'] = $member['name'];
-        $_SESSION['mobileno'] = $member['mobileno'];
-        $_SESSION['email'] = $member['email'];
+        $_SESSION['privilege'] = $member['privilege'];
 
         session_write_close();               
         header("location: index.php");

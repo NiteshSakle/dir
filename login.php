@@ -40,10 +40,10 @@ if(isset($_GET['id'])) {
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
         <style>
-/*           body { background-image:url("images/1.jpg");
+/*           body { background-image:url("images/9.jpg");
                    background-repeat: no-repeat;
-                   background-size: cover; }*/
-
+                   background-size: cover; }
+*/
         </style>
 <body >
         <span style="text-align: center;">

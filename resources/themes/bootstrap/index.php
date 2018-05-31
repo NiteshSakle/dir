@@ -98,19 +98,19 @@
                 </div>
             </div>
         </div>
-
-        <div>
-            <button class="btn btn-primary btn-lg " data-toggle="modal" data-target="#myModalHorizontal" style="float: left">
-                Create A Folder Here
-            </button>
-            <form action="./resources/themes/bootstrap/upload_file.php" method="post" enctype="multipart/form-data" style="float: right;width: 38%">               
-                Select file to upload:
-                <input type="file" name="file" id="file" accept="application/pdf">
-                <input type="submit" value="Upload" name="submit" class="btn btn-default">
-                <input type="text" name="dir" id="dir" value="/<?php echo $lister->getDirectoryPath(); ?>" style="visibility:hidden"/>                             
-            </form>             
-        </div>        
-        
+        <?php if($_SESSION['privilege']) {?>
+            <div>
+                <button class="btn btn-primary btn-lg " data-toggle="modal" data-target="#myModalHorizontal" style="float: left">
+                    Create A Folder Here
+                </button>
+                <form action="./resources/themes/bootstrap/upload_file.php" method="post" enctype="multipart/form-data" style="float: right;width: 38%">               
+                    Select file to upload:
+                    <input type="file" name="file" id="file" accept="application/pdf">
+                    <input type="submit" value="Upload" name="submit" class="btn btn-default">
+                    <input type="text" name="dir" id="dir" value="/<?php echo $lister->getDirectoryPath(); ?>" style="visibility:hidden"/>                             
+                </form>             
+            </div>        
+        <?php } ?>
 
             <?php file_exists('header.php') ? include('header.php') : include($lister->getThemePath(true) . "/default_header.php"); ?>
             <?php if ($lister->getSystemMessages()): ?>
