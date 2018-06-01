@@ -177,8 +177,8 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  background: #ebeeef;
+  padding: 5px;
+/*  background: #ebeeef;*/
 }
 
 
@@ -510,9 +510,10 @@ input.input100 {
     position: fixed;;
     bottom:0;    
     width:100%;
-    padding: 5px;
     background: #F8F8F8;
     text-align: center;
+   color: black
+
 }
 
 @media (max-width: 992px) {

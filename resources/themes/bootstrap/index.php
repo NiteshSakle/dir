@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>KHTPS-ELIBRARY</title>
-        <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/img/folder.png">
+        <link rel="shortcut icon" href="<?php echo THEMEPATH; ?>/img/favicon.jpg">
 
         <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/style.css">
         <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>/css/style1.css">

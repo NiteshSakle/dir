@@ -43,7 +43,12 @@ if ($_POST) {
     }
 }
 ?>
+<style>
+   body { background-image:url("images/baner.jpg");
+           background-repeat: no-repeat;
+           background-size: cover; }
 
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
