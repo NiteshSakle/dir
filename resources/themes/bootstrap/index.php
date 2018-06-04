@@ -105,7 +105,7 @@
                 </button>
                 <form action="./resources/themes/bootstrap/upload_file.php" method="post" enctype="multipart/form-data" style="float: right;width: 38%">               
                     Select file to upload:
-                    <input type="file" name="file" id="file" accept="application/pdf">
+                    <input type="file" name="file" id="file">
                     <input type="submit" value="Upload" name="submit" class="btn btn-default">
                     <input type="text" name="dir" id="dir" value="/<?php echo $lister->getDirectoryPath(); ?>" style="visibility:hidden"/>                             
                 </form>             
@@ -140,7 +140,7 @@
 
                             <div class="row">
                                 <span class="file-name col-md-7 col-sm-6 col-xs-9">
-                                        <i class="fa <?php echo $fileInfo['icon_class']; ?> fa-fw"></i>                                 
+                                        <i class="fa <?php if( $fileInfo['icon_class'] == 'fa-folder') echo 'fa-book'; else { echo $fileInfo['icon_class'];}  ?> fa-fw"></i>                                 
                                     <b> <span style="color: #D94E51;font-size: 18px"><?php echo $name; ?> </span></b>
                                 </span>
 

@@ -22,8 +22,8 @@
 	<style type="text/css" media="screen">
 		/*BOTH CURTAIN IMAGES CLASS*/
 		img.curtain{
-			width:680px;
-			height:774px; /* so jQuery doesn't keep ascpect ration when animating the width '*/
+			width:50%;
+			height:100%; /* so jQuery doesn't keep ascpect ration when animating the width '*/
 			z-index:99; /* to show it on top of the content*/
 		}
 		
@@ -42,7 +42,7 @@
 		/*THE CLASS OF THE WRAPPING DIV (THAT WRAPS EVERYTHING)*/
 		.curtain_wrapper{
 			width:100%; /* same as width of both the images summed */
-			height:700px; /* same as height of the images*/
+			height:100%; /* same as height of the images*/
 			position:relative; /*relative position so we can absolutely position the child elements*/
 			overflow:hidden; /*hide everything out of boundaries (in this case for the description div)*/
 			color:white; /* just styling*/

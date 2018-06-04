@@ -87,8 +87,12 @@ var check = function() {
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-                            <form class="login100-form validate-form" action="register.php" method="post">
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Name is required">
+                                        <div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+                                                <span class="login100-form-title-1">
+                                                        SignUp 
+                                                </span>
+                                        </div>                            <form class="login100-form validate-form" action="register.php" method="post">
+                                        <div class="wrap-input100 validate-input m-b-26" data-validate="Name is required">
 						<span class="label-input100">Name</span>
 						<input class="input100" type="text" name="name" placeholder="Enter Name"  value="<?php if (isset($_POST['name'])) echo $_POST['name']; ?>">
 						<span class="focus-input100"></span>

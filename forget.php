@@ -82,7 +82,13 @@ if ($_POST) {
 						<input class="input100" type="password" name="password" placeholder="Enter password">
 						<span class="focus-input100"></span>
 					</div>
-
+					<div class="flex-sb-m w-full p-b-30">
+                                            <div> 
+                                                <a href="login.php" class="txt1">
+                                                             Remember Credentials? LogIn here
+                                                    </a>
+                                            </div>                                                
+					</div>
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Update Password
