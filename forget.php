@@ -28,9 +28,9 @@ if ($_POST) {
 }
 ?>
 <style>
-  body { background-image:url("images/baner.jpg");
-          background-repeat: no-repeat;
-          background-size: cover; }
+           body { background-image:url("images/1.jpg");
+                   background-repeat: no-repeat;
+                   background-size: cover; }
 
 </style>
 <!DOCTYPE html>
@@ -53,12 +53,12 @@ if ($_POST) {
 </head>
 <body>
         <span style="text-align: center;">
-            <h2 style="background-color: #337ab7;margin-top: 0px;padding: 15px;color: white;font-family: cursive">Khaperkheda Thermal Power Station: E-library</h2>
+            <h2 style="background-color: #ffad33;margin-top: 0px;padding: 15px;color: maroon;font-family: -webkit-pictograph;font-size: 46px">Khaperkheda Thermal Power Station: E-library</h2>
         </span>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+				<div class="login100-form-title" style="background-image: url(images/7.jpg);">
 					<span class="login100-form-title-1">
 						Forget Password 
 					</span>

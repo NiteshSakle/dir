@@ -141,15 +141,15 @@
                             <div class="row">
                                 <span class="file-name col-md-7 col-sm-6 col-xs-9">
                                         <i class="fa <?php if( $fileInfo['icon_class'] == 'fa-folder') echo 'fa-book'; else { echo $fileInfo['icon_class'];}  ?> fa-fw"></i>                                 
-                                    <b> <span style="color: #D94E51;font-size: 18px"><?php echo $name; ?> </span></b>
+                                    <b> <span style="color: blue;font-size: 20px"><?php echo $name; ?> </span></b>
                                 </span>
 
                                 <span class="file-size col-md-2 col-sm-2 col-xs-3 text-right">
-                                    <b><span style="color: #D94E51;font-size: 18px"><?php echo $fileInfo['file_size']; ?></span></b>
+                                    <b><span style="color: blue;font-size: 18px"><?php echo $fileInfo['file_size']; ?></span></b>
                                 </span>
 
                                 <span class="file-modified col-md-3 col-sm-4 hidden-xs text-right">
-                                    <b><span style="color: #D94E51;font-size: 15px"><?php echo $fileInfo['mod_time']; ?> </span></b>
+                                    <b><span style="color: blue;font-size: 17px"><?php echo $fileInfo['mod_time']; ?> </span></b>
                                 </span>
                             </div>
 
@@ -167,6 +167,7 @@
         <script>
             function createDir(dirName) {
                 var ajaxurl = './resources/themes/bootstrap/createDir.php';
+                alert("AAA");
                 var dir1 = "/<?php echo $lister->getDirectoryPath(); ?>";
                 data = {'dir': dir1, 'name': dirName};
                 $.post(ajaxurl, data, function (data, status) {

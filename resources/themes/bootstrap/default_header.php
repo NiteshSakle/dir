@@ -3,7 +3,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" type="text/css" href="style.css" />
         <style>
-            body { background-image:url("<?php echo THEMEPATH; ?>/img/background.jpg");
+            body { background-image:url("<?php echo THEMEPATH; ?>/img/background.png");
                    background-repeat: no-repeat;
                    background-size: cover; }
 

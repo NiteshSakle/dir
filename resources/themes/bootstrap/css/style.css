@@ -82,7 +82,7 @@ body.breadcrumb-fixed {
     position: fixed;;
     bottom:0;    
     width:100%;
-    padding: 5px;
+    padding: 3px;
     background: #F8F8F8;
     text-align: center;
 }
