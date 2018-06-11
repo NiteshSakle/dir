@@ -72,7 +72,7 @@
                 </div>
             </div>
         </div>
-
+      
         <div id="page-navbar" class="navbar navbar-default navbar-fixed-top">
             <span style="text-align: center;">
                 <h2 style="background-color: #337ab7;margin-top: 0px;padding: 15px;color: white;font-family: cursive">Khaperkheda Thermal Power Station: E-library</h2>
@@ -125,9 +125,9 @@
 
             <div id="directory-list-header">
                 <div class="row">
-                    <div class="col-md-7 col-sm-6 col-xs-10">File</div>
+                    <div class="col-md-6 col-sm-6 col-xs-10">File</div>
                     <div class="col-md-2 col-sm-2 col-xs-2 text-right">Size</div>
-                    <div class="col-md-3 col-sm-4 hidden-xs text-right">Last Modified</div>
+                    <div class="col-md-4 col-sm-4 hidden-xs text-right">Last Modified</div>
                 </div>
                     <hr style="border: 0;background-color: black;height:1px;">                
             </div>
@@ -135,11 +135,11 @@
             <ul id="directory-listing" class="nav nav-pills nav-stacked">
 
                 <?php foreach ($dirArray as $name => $fileInfo): ?>
-                    <li data-name="<?php echo $name; ?>" data-href="<?php echo $fileInfo['url_path']; ?>">
+                    <li data-name="<?php echo $name; ?>" data-href="<?php echo $fileInfo['url_path']; ?>" data-link="<?php echo $lister->getDirectoryPath(); ?>">
                         <a href="<?php echo $fileInfo['url_path']; ?>" class="clearfix" data-name="<?php echo $name; ?>" target="<?php if (is_file($fileInfo['file_path'])) echo "_blank"; else echo "_self"?>">
 
                             <div class="row">
-                                <span class="file-name col-md-7 col-sm-6 col-xs-9">
+                                <span class="file-name col-md-6 col-sm-6 col-xs-9">
                                         <i class="fa <?php if( $fileInfo['icon_class'] == 'fa-folder') echo 'fa-book'; else { echo $fileInfo['icon_class'];}  ?> fa-fw"></i>                                 
                                     <b> <span style="color: blue;font-size: 20px"><?php echo $name; ?> </span></b>
                                 </span>
@@ -148,13 +148,17 @@
                                     <b><span style="color: blue;font-size: 18px"><?php echo $fileInfo['file_size']; ?></span></b>
                                 </span>
 
-                                <span class="file-modified col-md-3 col-sm-4 hidden-xs text-right">
+                                <span class="file-modified col-md4 col-sm-4 hidden-xs text-right">
                                     <b><span style="color: blue;font-size: 17px"><?php echo $fileInfo['mod_time']; ?> </span></b>
                                 </span>
-                            </div>
+                                </div>
 
                         </a>
- 
+                         <?php if($_SESSION['privilege']) {?>
+                        <a class="file-info-button" data-toggle="modal" data-target="#deleteModal">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                         <?php } ?>
                     </li>
                     <hr style="border: 0;background-color: black;height:1px; ">
                 <?php endforeach; ?>
@@ -167,8 +171,7 @@
         <script>
             function createDir(dirName) {
                 var ajaxurl = './resources/themes/bootstrap/createDir.php';
-                alert("AAA");
-                var dir1 = "/<?php echo $lister->getDirectoryPath(); ?>";
+                var dir1 = "/<?php echo $lister->getDirectoryPath(); ?>";                
                 data = {'dir': dir1, 'name': dirName};
                 $.post(ajaxurl, data, function (data, status) {
                     //alert("Data: " + data + "\nStatus: " + status);
@@ -188,7 +191,7 @@
             function uploadFile() {
                 window.location.assign("./resources/themes/bootstrap/upload_file.php");
             }
-
+            
         </script>
     </body>
 

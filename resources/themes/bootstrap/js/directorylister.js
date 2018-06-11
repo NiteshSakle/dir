@@ -22,37 +22,33 @@ $(document).ready(function() {
 
         // Get the file name and path
         var name = $(this).closest('li').attr('data-name');
-        var path = $(this).closest('li').attr('data-href');
-
-        // Set modal title value
-        $('#file-info-modal .modal-title').text(name);
-
-        $('#file-info .md5-hash').text('Loading...');
-        $('#file-info .sha1-hash').text('Loading...');
-        $('#file-info .filesize').text('Loading...');
-
-        $.ajax({
-            url:     '?hash=' + path,
-            type:    'get',
-            success: function(data) {
-
-                // Parse the JSON data
-                var obj = jQuery.parseJSON(data);
-
-                // Set modal pop-up hash values
-                $('#file-info .md5-hash').text(obj.md5);
-                $('#file-info .sha1-hash').text(obj.sha1);
-                $('#file-info .filesize').text(obj.size);
-
-            }
-        });
+        var path = $(this).closest('li').attr('data-link');
+        var complete_path = path + '/' + name;
+        
+        if(confirm("Are you sure you want to delete?")) {
+            var ajaxurl = './resources/themes/bootstrap/delete.php?f=function';
+            data = {'dir': complete_path, 'dirname' : name};
+            $.post(ajaxurl, data, function (data, status) {
+                window.location.reload(true);
+            });
+        }
+//        $.ajax({
+//            url:  ' ./resources/themes/bootstrap/delete.php',
+//            type:    'get',
+//            success: function(data) {
+//
+//                // Parse the JSON data
+//                var obj = jQuery.parseJSON(data);
+//
+//                alert(obj);
+//            }
+//        });
 
         // Show the modal
-        $('#file-info-modal').modal('show');
+       // $('#file-info-modal').modal('show');
 
         // Prevent default link action
         event.preventDefault();
-
     });
 
 });

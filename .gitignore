@@ -2,3 +2,6 @@ analytics.inc
 resources/config.php
 /vendor/
 /nbproject/private/
+/210 MW Specific/*
+/500 MW Specific/*
+/Common Interest/*

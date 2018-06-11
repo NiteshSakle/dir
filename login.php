@@ -1,7 +1,7 @@
 
 <!--            BELOW CODE IS FOR INAUGARATIN PURPOSE ONLY      -->
 
-<script type="text/javascript" src='js/jquery.js'></script>
+<!--<script type="text/javascript" src='js/jquery.js'></script>
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function(){
 			
@@ -78,18 +78,18 @@
 	
 	<div class='curtain_wrapper'>
     
-	<!-- 2 CURTAIN IMAGES START HERE  -->
+	 2 CURTAIN IMAGES START HERE  
 	<img class='curtain curtainLeft' src='images/curtainLeft.jpg' />
     <img class='curtain curtainRight' src='images/curtainRight.jpg' />
-	    <!-- END IMAGES -->
+	     END IMAGES 
 
-		 <!-- START DESCRIPTION DIV, WHICH WILL BE SHOWN ON TOP OF THE CURTAIN AND REMOVED WHEN THE CURTAINS OPEN -->
+		  START DESCRIPTION DIV, WHICH WILL BE SHOWN ON TOP OF THE CURTAIN AND REMOVED WHEN THE CURTAINS OPEN 
     <div class='description' style="margin:0 auto;">
     	Click Anywhere To Visit E-Library!!
     </div>
-    <!-- END DESCRIPTION DIV -->
+     END DESCRIPTION DIV 
 
-<!--        INAUGARATION CODE ENDS-->
+        INAUGARATION CODE ENDS-->
         
 <?php
 include("connect.php");

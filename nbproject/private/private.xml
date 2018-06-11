@@ -3,15 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/elibrary/register.php</file>
-            <file>file:/C:/xampp/htdocs/elibrary/css/main.css</file>
-            <file>file:/C:/xampp/htdocs/elibrary/css/util.css</file>
-            <file>file:/C:/xampp/htdocs/elibrary/forget.php</file>
-            <file>file:/C:/xampp/htdocs/elibrary/resources/themes/bootstrap/css/style.css</file>
-            <file>file:/C:/xampp/htdocs/elibrary/resources/themes/bootstrap/index.php</file>
-            <file>file:/C:/xampp/htdocs/elibrary/login.php</file>
-            <file>file:/C:/xampp/htdocs/elibrary/resources/themes/bootstrap/createDir.php</file>
-            <file>file:/C:/xampp/htdocs/elibrary/resources/themes/bootstrap/default_header.php</file>
+            <file>file:/C:/xampp/htdocs/dir/.gitignore</file>
+            <file>file:/C:/xampp/htdocs/dir/resources/themes/bootstrap/js/directorylister.js</file>
+            <file>file:/C:/xampp/htdocs/dir/resources/themes/bootstrap/delete.php</file>
+            <file>file:/C:/xampp/htdocs/dir/resources/themes/bootstrap/upload_file.php</file>
+            <file>file:/C:/xampp/htdocs/dir/resources/themes/bootstrap/createDir.php</file>
+            <file>file:/C:/xampp/htdocs/dir/resources/themes/bootstrap/index.php</file>
         </group>
     </open-files>
 </project-private>
